@@ -1,1 +1,56 @@
+from tkinter import *
 
+names = {
+    "Alice", "Alic@gmail.com",
+    "Bob", "Bob@gmail.com"
+    "Jim", "Jim@gmail.com"
+}
+
+
+
+
+def exitprogram():
+    pass
+
+def searchname():
+    searchstring = fld1.get()
+    emailaddress = names[searchstring]
+    print(emailaddress)
+    fld3.insert(END, emailaddress)
+
+
+
+wnd = Tk()
+
+frame1 = Frame(wnd)
+frame1.pack(side="top", padx = 15, pady = 15)
+
+frame2 = Frame(wnd)
+frame2.pack(side="top", padx = 15, pady = 15)
+
+
+
+
+lbl1 = Label(frame1, text="First name")
+lbl1.pack()
+
+fld1 = Entry(frame1, width=50, background = "white")
+fld1.pack()
+
+lbl2 = Label(frame1, text="Last name")
+lbl2.pack()
+
+fld2 = Entry(frame1, width=50, background = "white")
+fld2.pack()
+
+lbl3 = Label(frame1, text="Email address")
+lbl3.pack()
+
+fld3 = Entry(frame1, width=50, background = "white")
+fld3.pack()
+
+btn1 = Button(frame2, text="Exit", command=exitprogram)
+btn1.pack(side="left", padx=5)
+
+btn2 = Button(frame2, text="Search", command=searchname)
+btn2.pack(side="left", padx=5)
