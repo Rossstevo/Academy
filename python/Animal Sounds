@@ -1,1 +1,29 @@
+# GUI which displays animal images and plays sounds when image is clicked
 
+from tkinter import *
+from playsound import playsound
+
+
+wnd = Tk()
+
+def playSheep():
+    playsound("sheep.mp3")
+
+def playCow():
+    playsound("cow-moo-2-6893.mp3")
+
+picSheep = PhotoImage(file="sheep.gif")
+picCow = PhotoImage(file="cow.gif")
+
+lbl1 = Label(wnd, text="Click an animal button")
+lbl1.pack(side = "left")
+
+btn1 = Button(wnd, text="Sheep", image=picSheep, command=playSheep)
+btn1.pack(side = "left")
+
+btn1 = Button(wnd,  text="Cow", image=picCow, command=playCow)
+btn1.pack()
+
+
+
+wnd.mainloop()
