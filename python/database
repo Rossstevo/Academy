@@ -1,0 +1,38 @@
+import sqlite3    # import sqlite3 library
+
+dbc = sqlite3.connect("people.db")    # connect to database (creates it if it doesn't exist)
+cursor = dbc.cursor()    # get a cursor (pointer to the database)
+
+
+# create table... only creates it if it doesn't exist
+sql = "create table if not exists people (firstname text, lastname text, address text, town text)"
+cursor.execute(sql)
+dbc.commit()
+
+# insert some data...
+sql = "insert into people values('Bob', 'Smith', '1 Main Street', 'Anyville')"
+cursor.execute(sql)
+dbc.commit()
+
+sql = "insert into people values('Alice', 'Jones', '3 Main Street', 'Anyville')"
+cursor.execute(sql)
+dbc.commit()
+
+sql = "insert into people values('Jane', 'Jones', '1 High Street', 'Sometown')"
+cursor.execute(sql)
+dbc.commit()
+
+# query data in the table
+sql = "select firstname, lastname from people where town = 'Anyville'"
+cursor.execute(sql)
+
+# get the data back to the program
+data = cursor.fetchall()
+print(data)
+
+# loop around the returned data and print only surnames
+for person in data:
+    print(person[1])
+
+# close the database connection
+dbc.close()
