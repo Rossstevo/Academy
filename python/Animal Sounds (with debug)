@@ -1,0 +1,41 @@
+from tkinter import *
+from playsound import playsound
+
+
+wnd = Tk()
+
+frame1 = Frame(wnd, background="blue")
+frame1.pack(side="top", padx = 15, pady = 15)
+
+def playSheep():
+    #playsound("sheep.mp3")
+    txt1.insert(END, "play chicken\n")
+
+
+def playCow():
+    #playsound("cow-moo-2-6893.mp3")
+    txt1.insert(END, "play cow\n")
+
+def clearoutput():
+    txt1.delete(1.0, END)
+
+picSheep = PhotoImage(file="sheep.gif")
+picCow = PhotoImage(file="cow.gif")
+
+lbl1 = Label(frame1, text="Click an animal button")
+lbl1.pack()
+
+btn1 = Button(frame1, text="Sheep", image=picSheep, command=playSheep)
+btn1.pack()
+
+btn1 = Button(frame1,  text="Cow", image=picCow, command=playCow)
+btn1.pack()
+
+txt1 = Text(frame1, width=50, wrap=WORD, bg="coral")
+txt1.pack()
+
+btn3 = Button(frame1, text="Clear", command=clearoutput)
+btn3.pack()
+
+
+wnd.mainloop()
