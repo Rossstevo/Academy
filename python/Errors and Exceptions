@@ -1,0 +1,61 @@
+l = [10, 9, 8, 0, 4]
+
+# trying to add two mismatched data types...
+try:
+    n = 5 + "hello"
+except TypeError:
+    print("You can't add those two types together")
+
+
+# first exception causes the program to jump out of the loop
+try:
+    for i in range(0, 9):
+        print(l[i])
+except:
+    print("Value out of range")
+
+
+# program continues with the remaining items after each exception
+for i in range(0, 9):
+    try:
+        print(l[i])
+    except:
+        print("Value out of range")
+
+
+# multiple different exception types
+for i in range(0, 9):
+    try:
+        print(l[i], 100 / l[i])
+    except IndexError:
+        print("Value out of range")
+    except ZeroDivisionError:
+        print("You can't divide by zero or the world will end")
+
+
+# another example of handling multiple exception types
+try:
+    outfile = open("numbers.txt", "w")
+    for i in range(0, 9):
+        print(l[i], file=outfile)
+    outfile.close()
+except IndexError:
+    print("Value out of range")
+except PermissionError:
+    print("You are not allowed to write to the file")
+    # exit()
+
+
+# try .. except .. else .. finally
+# the else and finally parts are optional
+try:
+    #n = 5 + "hello"
+    n = 5 + 5
+except TypeError:
+    print("You can't add those two types together")
+else:
+    print("This is after the except block")
+finally:
+    print("This runs even if the exception occurs")
+
+print("Finished")
