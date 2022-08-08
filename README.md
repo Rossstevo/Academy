@@ -6,3 +6,5 @@
 - FastAPI, UVICORN
 - Selenium 
 - Pytest
+- postman 
+- Uvicorn 
