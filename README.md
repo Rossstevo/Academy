@@ -3,6 +3,6 @@
 
 - Python 
 - Beautiful soup 
-- FastAPI
+- FastAPI, UVICORN
 - Selenium 
 - Pytest
