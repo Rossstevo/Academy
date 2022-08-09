@@ -1,0 +1,18 @@
+import requests
+
+
+x = 3 # fizz value
+y = 5 # buzz value
+z = 7 # meow value
+
+#lower and upper range
+
+j = 1 # lower limit
+k = 101 # upper limit
+
+for i in range(j,k):
+    f = i + 1
+    url = f"http://127.0.0.1:8000/fizzbuzz?fizzValue={x}&buzzValue={y}&meowValue={z}&fizzlower={i}&fizzupper={f}"
+    ret = requests.get(url)
+    body = ret.content.decode("utf-8")
+    print(body)
