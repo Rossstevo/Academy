@@ -1,0 +1,90 @@
+#from fastapi import FastAPI
+#import json
+#from pydantic import BaseModel
+
+j = """
+[   
+    {
+        "id" : 1,
+        "name": "apple",
+        "quantity" : 50
+    },
+    {
+        "id" : 2,
+        "name": "banana",
+        "quantity" : 23
+    }
+]
+"""
+
+fruits = json.loads(j)
+
+app = FastAPI()
+
+
+@app.get("/fruit")
+def api_getfruit(id: int = 0):
+    if id == 0:
+        res = fruits
+    else:
+        res = {"message": "no matching fruit found"}
+        for fruit in fruits:
+            if fruit["id"] == id:
+                res = fruit
+                break
+    return res
+
+
+# -- you need to define a class before post
+
+class FruitClass(BaseModel):
+    name: str
+    quantity: int
+
+
+@app.post("/newfruit")
+def api_newfruit(fruit: FruitClass):
+    global nextid #-- auto updates new entry id's
+    global fruits
+
+    newfruit = {}
+    newfruit["id"] = nextid
+    newfruit["name"] = fruit.name
+    newfruit["quantity"] = fruit.quantity
+    fruits.append(newfruit)
+    nextid += 1
+
+    return newfruit
+
+
+@app.get("/hello")
+def api_hello():
+    return {"name": "Ross"}
+
+
+@app.get("/addtwo")
+def api_addtwo(nFirst: int, nSecond: int):
+    n = nFirst + nSecond
+    if n == 17:
+        n = "that's a special value"
+
+    return {"result": n}
+
+
+@app.get("/fizzbuzz")
+def fizzbuzz(fizzValue: int, buzzValue: int, meowValue: int, fizzlower: int, fizzupper: int):
+    l = []
+    for i in range(fizzlower, fizzupper):
+        s = ""
+        if i % fizzValue == 0:
+            s = "Fizz"
+        if i % buzzValue == 0:
+            s += "Buzz"
+        if i % meowValue == 0:
+            s += "Meow"
+        if s == "":
+            s = str(i)
+        l.append({"Value": f"{s}"})
+    return l
+
+# http://127.0.0.1:8000/addtwo?nFirst=5&nSecond=6
