@@ -1,0 +1,29 @@
+1. install FASTAPI
+
+2. this is the basic script
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/hello")
+def api_hello():
+    return {"name" : "Ross"}
+
+
+3. open terminal and run
+uvicorn basicAPI:app --refresh
+
+4. go to http://127.0.0.1:8000/hello
+
+5. this is a REST.api, using JSON
+
+6. uvicorn basicAPI:app --reload    this keeps the post refreshing when you save
+
+@app.get("/addtwo")
+def api_addtwo(nFirst: int, nSecond: int):
+    n = nFirst + nSecond
+    return{"result": n}
+
+#http://127.0.0.1:8000/addtwo?nFirst=5&nSecond=6
