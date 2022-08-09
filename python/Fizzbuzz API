@@ -1,0 +1,18 @@
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/fizzbuzz")
+def fizzbuzz(x: int, y: int):
+    for i in range(101):
+        s = ""
+        if i % x == 0:
+            s = "Fizz"
+        if i % y == 0:
+            s += "Buzz"
+        if s == "":
+            s = str(i)
+        print(s)
+
+    return {"s"}
