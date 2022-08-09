@@ -1,0 +1,10 @@
+import requests
+
+x = [5,7,9,4,6]
+y = [3,7,8,1,2]
+
+for i in range(0,5):
+    url = f"http://127.0.0.1:8000/addtwo?nFirst={x[i]}&nSecond={y[i]}"
+    ret = requests.get(url)
+    body = ret.content.decode("utf-8")
+    print(body)
