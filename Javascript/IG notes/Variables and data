@@ -1,0 +1,70 @@
+*Working with Variables and Data* 
+
+To write text into the document as the page loads, use document.write(). This method allows you to create a text which is written to the window as the script is executed. 
+The Write method is a member of the document object, which is not the default object. 
+The window object is the default object. 
+Every object that is not the default object, needs to be referred to explicitly like so...
+	objectName.methodName();
+	objectName.propertyName;
+	
+
+*Variables* 
+A variable is a space of memory. 
+A Data type is the type of information that a variable holds. JS provides 2 data types, primitive and non primitive. 
+Primitive. 
+there are 5 primitive data types. 
+String, number, Boolean, null (value does not exist), undefined (value created but no value is assigned). 
+Non-primitive(complex) data types 
+Array, object. 
+
+A Literal is the syntactic representation of the data 
+JS naming variables 
+Valid = letter, dollar sign. underscore. 
+invalid = number, question mark, @ symbol. (no dots in name)
+
+Js uses camelCase 
+JS is case-sensitive. 
+
+dot notation is a reference that is used to access a property or method of an object. 
+You do not need to explicitly declare variables in JS 
+
+Variables which are assigned to another variable. 
+var userName1 = "Juan";
+var userName2 = userName1;
+If userName1 changes value, this does not affect userName2
+
+*Variable scope* 
+
+In JS, variables can have local or global scope. 
+local = defined in function 
+global = outside of function 
+ 
+if variable is declared using let, it has block scope.
+let variables are hoisted to the top of their current function 
+Const variables has block scope. Their values cannot change. 
+use uppercase when declaring const variables. 
+
+
+*operators*
+operator are used to store or return values. 
+operands represent a piece of data that is manipulated in some way. 
+
+
+=== means strict comparison. The value must be equal AND the same data type. 
+
+quiz definitions: 
+document.write = dynamically writes text to a window as the script is executed 
+confirm() = requests true or false answer from a user and captures the reply 
+prompt() = request info from user 
+alert() = communicates a statement to a user that appears when the script is executed 
+
+
+The question mark 
+
+Condition to test ? Value if true: value if false 
+
+Assignment operators. 
+
+all operators become assignment operators when placed in front of the = sign. 
+
+tofixed(num) = converts a number into string 
