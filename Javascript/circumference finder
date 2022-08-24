@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Circle circumference calculator</title>
+  </head>
+  <body>
+    
+    <div class="wrapper">
+      <h1>Circle Circumference calculator</h1>
+      <form name="formOne">
+        <p>Enter circle radius</p>
+        <input type="text" name="circle" placeholder="" />
+        <p></p>
+        <button class="submit" type="button" value="submit" onclick="calculate()" >submit</button>
+        <p>The circle area is</p>
+        <input type="text" name="answer1" />
+        <p>The circumference is</p>
+        <input type="text" name="answer2" />
+      </form>
+    </div>
+
+    <script>
+      function calculate() {
+        var p = document.formOne.circle.value; // get radius input 
+
+        var area = Math.PI * (p * p); // calculate area 
+        area = area.toFixed(2);
+        document.formOne.answer1.value = area; // send to output answer 1
+
+        var circum = Math.PI * (p * 2); // calculate circum
+        circum = circum.toFixed(2);
+        document.formOne.answer2.value = circum; // send to output answer 2 
+      }
+    </script>
+  </body>
+</html>
