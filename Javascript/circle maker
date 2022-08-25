@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Circle</title>
+    <script src="js/paper-core.js"></script>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <div class="wrapper">
+        <h1>Circle Circumference Tool</h1>
+        <form name="formOne">
+          <p>Enter circle radius</p>
+          <input type="text" name="circle" placeholder="" />
+          <p></p>
+          <button
+            class="submit"
+            type="button"
+            value="submit"
+            onclick="calculate()"
+          >
+            Submit
+          </button>
+          <!-- <button
+            class="submit"
+            type="button"
+            value="submit"
+            onclick="addOuter()"
+          > -->
+            <!-- Show Circumference
+          </button> -->
+          <p>The area is</p>
+          <input type="text" name="answer1" />
+          <p>The circumference is</p>
+          <input type="text" name="answer2" />
+          <button class="clear" id="clear">clear</button>
+        </form>
+      </div>
+
+      <canvas id="mycanvas"></canvas>
+    </div>
+    <script>
+      let circum = 0;
+var p = 0
+      function calculate() {
+         p = document.formOne.circle.value; // get radius input
+
+        let area = Math.PI * (p * p); // calculate area
+        area = area.toFixed(2);
+        document.formOne.answer1.value = area; // send to output answer 1
+
+        circum = Math.PI * (p * 2); // calculate circum
+        circum = circum.toFixed(2);
+        document.formOne.answer2.value = circum; // send to output answer 2
+
+        drawCircle();
+      }
+
+      paper.install(window);
+      paper.setup("mycanvas");
+
+
+    
+      // draw circle 
+      function drawCircle() {
+        project.activeLayer.removeChildren();
+       
+        // make circle 
+        var c = new Shape.Circle(200, 200, p);
+        c.fillColor = "#72cc50";
+
+        // make text
+        var textPosition = 200;
+        var t = new PointText(200 + (p/2), 195);
+        t.justification = "center";
+        t.fillColor = "white";
+        t.content = "r = " + p;
+        t.fontSize = p / 6;
+        
+
+        // parse radius 
+        var radius = parseInt(p) + 200
+        radius = parseInt(radius)
+        console.log(radius)
+
+        // parseInt(lineWidth)
+        var from = new Point(200, 200);
+        var to = new Point(radius, 200);
+        var path = new Path.Line(from, to);
+        // path.dashArray = [10, 12];
+        path.strokeColor = "white";
+        path.strokeWidth = p / 30
+
+        //test to add circumference 
+
+
+        function addOuter(){
+        var outer = new Shape.Circle(new Point(200, 200), p);
+        outer.strokeColor = 'black';
+        outer.dashArray = [10, 12];
+
+        var outertextPosition = 50;
+        var s = new PointText(80, 30);
+        s.justification = "center";
+        s.fillColor = "black";
+        s.content = " circumference = " + circum
+        s.fontSize = "14";
+
+       
+        }
+
+        // addOuter()
+
+
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+??CSSS 
+
+body {
+    /* border: 10px solid black; */
+    height: 800px;
+}
+
+.main-wrapper {
+    /* border: 2px solid red; */
+    display: flex;
+}
+canvas {
+    margin-top: 15px;
+    position: relative;
+    background: white;
+    right: 160px;
+    height: 400px;
+    width: 400px;
+}
+
+body {
+    background: whitesmoke;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+  }
+  h1 {
+    color: #72cc50;
+  }
+  p {
+    font-size: 13px;
+    text-align: left;
+    opacity: 70%;
+  }
+  .wrapper {
+    /* border: 2px solid #5e5e5e; */
+    background: #ffff;
+    text-align: center;
+    margin: auto;
+    width: 400px;
+    padding: 15px;
+  }
+  input {
+    text-align: left;
+    width: 400px;
+    height: 35px;
+    background: #e6e6e6;
+    border: none;
+  }
+  button {
+    text-align: left;
+    width: 405px;
+    height: 35px;
+    background: #e6e6e6;
+    border: none;
+    margin-top: 15px;
+  }
+  .submit {
+    background: #72cc50;
+    color: black;
+    text-align: center;
+  }
+  .clear {
+    background: coral;
+    color: black;
+    text-align: center;
+    
+  }
+  
