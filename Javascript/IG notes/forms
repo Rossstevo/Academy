@@ -1,0 +1,34 @@
+button	A scriptable button other than a submit or reset button
+checkbox	A checkbox that is used to submit a yes/no or true/false option
+fieldset	An option that groups related elements in a form
+legend	A caption for a fieldset element
+hidden	A hidden field containing a name/value pair that is submitted unseen and unchanged by the user
+color	An option for specifying a color
+email	A textbox to enter or edit the email address
+file	An option button to browse one or more files, to upload to a server
+keygen	A key-pair generator field
+label	A label for an input element
+password	A single-line text box that displays input as asterisks (***) to mask data entry
+radio	An option button in a set of mutually exclusive option buttons
+reset	A reset button that is used to restore default values in form elements
+range	An element for specifying a range of numeric value
+select	A selection list from which a single choice or multiple choices can be made
+submit	A submit button that is used to send the contents of a form to a server
+text	A single-line text field that is used for data entry
+textarea	A scrolling text box that is used for data entry
+url	A textbox to enter or edit a URL
+
+
+action	Specifies or returns a string value specifying the URL to which the form data is submitted
+autocomplete	Sets or returns the value of autocomplete attribute
+elements	Returns an array of objects containing each form element in the order that the elements appear in the form
+encoding	Specifies or returns a string containing the MIME encoding of the form (specified in the encrypt attribute)
+length	Returns the number of elements in the form
+method	Specifies or returns a string value containing the submission method of form data to a server
+name	Specifies or returns the name of the form as defined in the <form> tag
+noValidate	Specifies whether the form data should be validated on submission. This property of the form object is not supported on the Safari browser
+target	Specifies or returns a string value containing the name of the window to which responses to form submissions are directed
+
+
+
+SSL (secure sockets Layer) - standard security technology that encrypths data ent between client and the server during transmission 
