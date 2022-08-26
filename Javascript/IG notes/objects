@@ -1,0 +1,13 @@
+create custom JS objects with a special function called a constructor 
+A custom object is an empty template from which you can generate an Instance 
+once the object is defined, use Instaciation to create new copied 
+to populate a property of a new custom object, you must declare a variable
+
+each class can have only one method with the name "constructor"
+
+constructor is a special function that enables you to create instance of custom objects 
+class is a special function that can be declared using the class keyword 
+custom object - user defined object 
+generator - function that is used to create iterable objects and is declared using the function keyword 
+iterator - object that can access the items in its collection
+prototype - property that is used to add properties and methods to existing prototypes 
