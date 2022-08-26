@@ -1,0 +1,142 @@
+window - fram of the browser 
+document - properties and methods to work with document text, anchors, links, colors 
+with - way to associate several properties and/or mathods with a single object 
+image - manipulate images 
+
+history - track recetnly visited urls 
+location - specify urls in a script 
+navigator - provide info about the browser beign used 
+
+containership - principle that objects are containe within larger objects, 
+DOM - renders HTML or XML doc as a programmable object 
+virtual DOM  - node tree containing list of element with their attributes as objects and properties 
+
+
+JS language objects 
+
+
+\b	Backspace
+\f	Form feed
+\n	New line
+\r	Carriage return
+\t	Tab
+\"	Double quotation mark
+\'	Single quotation mark
+\\	Backslash
+
+substring is used when you want to examine and extract a portion of a string 
+
+"ABC1234XYZ".substring(3,7) ----> 1234
+
+split(separatorString, limitNumber): Splits a string and returns an array of substrings.
+slice(startNumber, endNumber): Extracts a section of the string.
+search(RegExp): Searches a string for a string of text and returns the index position of the string, if found.
+match(RegExp): Similar to the search() method, except that it returns an array of matched text instead of an index position.
+replace(searchValue, replaceValue): Receives two arguments: first, the string to be replaced, and then the replacement text.
+concat(array2, array3, ..., arrayX): Concatenates (joins) two or more arrays.
+
+*******regex 
+\	When used with special characters, interprets the character literally, e.g., /x\*/ matches "x*" not multiple occurrences of x
+
+When used before a non-special character, indicates that the character is special and is not to be treated literally
+^	Matches the beginning of the input
+$	Matches the end of the input
+*	Matches the preceding expression 0 or more times
++	Matches the preceding expression one or more times
+?	Matches the preceding expression 0 or 1 time
+|	Matches either of the two expressions on its sides, e.g., a|b matches a or b
+
+.	Matches a single character (except the newline character)
+\w	Matches any alphanumeric character, including underscore
+\W	Matches any non-word character
+\d	Matches a digit
+\D	Matches a non-digit character
+\n	Matches a newline character
+\t	Matches a tab character
+\b	Matches a character at the beginning or the end of a word
+\s	Matches a single whitespace character
+\S	Matches a single non-whitespace character
+
+/: Indicates that you are starting a pattern for RegExp
+\d: Represents any numeral between 0 and 9
+{digit}: Indicates the number of times in the pattern the character immediately preceding it must occur
+-: Indicates a literal dash
+?: Indicates that the preceding character must occur zero times or one time
+
+*******ARRAYS 
+
+join method creates a string of an arrays values 
+sort() = alphabetical 
+push() = adds to the end 
+pop() = removes and returns the last item 
+shift() = removed and returns the first item
+unshift() = adds to the start 
+
+forEach() = calls a function for each element in an array 
+map() = calls a provided function for each element of the calling array and returns a new arrau with the results of the function 
+
+example of .map()
+var arr = [ 0, 1, 2];
+
+var arr_call = arr.map (function add(num) {
+ return num+100; } );
+console.log(arr_call); 
+
+* returns (3) [100, 101, 102]
+
+***** Date object 
+
+getMinutes()	Returns the number of minutes (0 through 59)
+getSeconds()	Returns the number of seconds (0 through 59)
+getTime()	Returns the number of milliseconds that have elapsed since 00:00:00 GMT on January 1, 1970
+toLocaleString()	Returns the date and time in the local system's format
+toLocaleTimeString()	Returns the time in the local system's format
+
+getDate()	Returns the day number (1 through 31)
+getDay()	Returns the day-of-week value (0 through 6; 0 is Sunday)
+getMonth()	Returns the month number (0 through 11; 0 is January)
+getFullYear()	Returns the year number in four-digit format
+getHours()	Returns the hour number (0 through 23; 0 is midnight)
+
+
+**** Math object 
+abs(myNum)	Absolute value of myNum
+acos(myNum)	Arc cosine of myNum (in radians)
+asin(myNum)	Arc sine of myNum (in radians)
+atan(myNum)	Arc tangent of myNum (in radians)
+ceil(myNum)	Next integer is greater than or equal to (>=) myNum
+cos(myNum)	Cosine of myNum
+exp(myNum)	Euler's constant to the power of myNum
+floor(myNum)	Next value less than or equal to (<=) myNum
+log(myNum)	Natural logarithm of myNum (base e)
+max(myNum1, myNum2)	Higher of myNum1 or myNum2
+min(myNum1, myNum2)	Lower of myNum1 or myNum2
+pow(myNum1, myNum2)	myNum1 to the power of myNum2
+random()	Random value from 0 to 1
+round(myNum)	Rounds myNum to the nearest appropriate integer (e.g., the number 1.5 rounds to 2; the number 1.4 rounds to 1)
+sin(myNum)	Sine of myNum (in radians)
+sqrt(myNum)	Square root of myNum
+tan(myNum)	Tangent of myNum (in radians)
+
+Overview of key terms 
+String: Represents text, numbers, or any combination of characters that functions as text
+RegExp: Allows a user to search for specified patterns in text
+Array: Represents a single variable with multiple values, which are indexed for easy referencing
+Date: Allows a user to use date and time information
+Math: Contains properties and methods that help you create advanced mathematical calculations
+
+callback function = function that is passed to another function as an argument. 
+metacharacter = character that has a special meaning (\)
+regular expression = mechanism that searches for a specified pattern in text 
+
+
+
+
+
+
+
+
+
+
+
+
