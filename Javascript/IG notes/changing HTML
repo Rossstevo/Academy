@@ -1,0 +1,7 @@
+getElementById(): Accesses the properties of the first occurrence of an element with a specified ID
+getElementsByName(): Accesses all elements with the specified name
+getElementsByTagName(): Accesses all elements with the specified tag name
+getAttribute(): Retrieves the corresponding value of an attribute
+setAttribute(): Dynamically modifies the value of an element's attribute
+removeAttribute(): Deletes X/HTML attributes from an element
+
