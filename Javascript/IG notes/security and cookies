@@ -1,0 +1,14 @@
+The document object containg the cookie propety to work with the cookies in JS 
+the only parameter needed to assign a cookie with JS is the name = value pair 
+if no expires = date parameter is assigned, the cookie will be deleted when the browser is cloed 
+you can test for the presence of any cookie by using the document.cookie statement 
+
+cookie - small peices of info collected by the web bowser to track user activity 
+xss - cross cite scripting hacking stuff 
+
+
+inline frame drisplays a seperate file floating within a page 
+alert 
+XSS is a type of code injection hack 
+in XSS, the code is injected in a hyperlink 
+
